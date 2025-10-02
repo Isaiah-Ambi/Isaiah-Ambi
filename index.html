@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Terminal v2.0 - Digital Passport</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+    </style>
+</head>
+<body>
+    <div class="terminal-container">
+        <div class="terminal-header">
+            <div class="terminal-title">
+                <span>⚡</span>
+                <span>DEV_TERMINAL_v2.0</span>
+                <span class="typing-effect"></span>
+            </div>
+            <div class="status-lights">
+                <div class="status-light red"></div>
+                <div class="status-light yellow"></div>
+                <div class="status-light green"></div>
+            </div>
+        </div>
+
+        <div class="tabs-container">
+            <button class="tab active" onclick="switchTab('overview')">📊 Overview</button>
+            <button class="tab" onclick="switchTab('skills')">⚡ Skills</button>
+            <button class="tab" onclick="switchTab('projects')">🚀 Projects</button>
+            <button class="tab" onclick="switchTab('achievements')">🏆 Achievements</button>
+            <button class="tab" onclick="switchTab('contact')">📡 Contact</button>
+        </div>
+
+        <div class="terminal-content">
+            <!-- Overview Section -->
+            <div id="overview" class="content-section active">
+                <div class="passport-header">
+                    <div class="avatar-container">
+                        <div class="avatar-placeholder"><img class="passport" src="./passport.png"></div>
+                    </div>
+                    <div class="passport-info">
+                        <h1>[Your Name]</h1>
+                        <div class="passport-meta">
+                            <div class="meta-item">
+                                <span class="label">ROLE:</span>
+                                <span>Full Stack Developer</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="label">LEVEL:</span>
+                                <span>Senior Developer</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="label">STATUS:</span>
+                                <span>🟢 Active</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="label">LOCATION:</span>
+                                <span>Remote / Global</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-title">$ whoami</div>
+                <p style="line-height: 1.8; margin-bottom: 20px;">
+                    Passionate full-stack developer with expertise in building scalable web applications. 
+                    Specializing in modern JavaScript frameworks, cloud architecture, and creating elegant 
+                    solutions to complex problems. Always learning, always coding.
+                </p>
+
+                <div class="command-line">
+                    <span class="command-prompt">$</span> git status<br>
+                    <span style="color: #00ff9f;">On branch: main</span><br>
+                    <span style="color: #00ff9f;">Your branch is up to date</span><br>
+                    <span style="color: #00ff9f;">Ready to commit awesome code!</span>
+                </div>
+            </div>
+
+            <!-- Skills Section -->
+            <div id="skills" class="content-section">
+                <div class="section-title">$ npm list --skills</div>
+                <div class="skill-grid">
+                    <div class="skill-card">
+                        <div class="skill-name">JavaScript/TypeScript</div>
+                        <div class="skill-level">
+                            <div class="skill-progress" style="width: 95%"></div>
+                        </div>
+                        <small>Expert Level</small>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-name">React/Next.js</div>
+                        <div class="skill-level">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                        <small>Advanced</small>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-name">Node.js/Express</div>
+                        <div class="skill-level">
+                            <div class="skill-progress" style="width: 88%"></div>
+                        </div>
+                        <small>Advanced</small>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-name">Python/Django</div>
+                        <div class="skill-level">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                        <small>Advanced</small>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-name">AWS/Cloud Services</div>
+                        <div class="skill-level">
+                            <div class="skill-progress" style="width: 82%"></div>
+                        </div>
+                        <small>Proficient</small>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-name">Docker/Kubernetes</div>
+                        <div class="skill-level">
+                            <div class="skill-progress" style="width: 78%"></div>
+                        </div>
+                        <small>Proficient</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects Section -->
+            <div id="projects" class="content-section">
+                <div class="section-title">$ ls -la /projects</div>
+                <div class="project-card">
+                    <div class="project-title">🚀 E-Commerce Platform</div>
+                    <div class="project-description">
+                        Built a scalable e-commerce platform handling 100k+ daily users with real-time 
+                        inventory management and AI-powered recommendations.
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Redis</span>
+                        <span class="tech-tag">AWS</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-title">📊 Data Analytics Dashboard</div>
+                    <div class="project-description">
+                        Created an interactive dashboard for real-time data visualization with custom 
+                        charts and predictive analytics capabilities.
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Vue.js</span>
+                        <span class="tech-tag">D3.js</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-title">🤖 AI Chat Application</div>
+                    <div class="project-description">
+                        Developed a real-time chat application with AI-powered features including 
+                        sentiment analysis and automated moderation.
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">Socket.io</span>
+                        <span class="tech-tag">OpenAI API</span>
+                        <span class="tech-tag">Redis</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Achievements Section -->
+            <div id="achievements" class="content-section">
+                <div class="section-title">$ cat achievements.log</div>
+                <div class="achievement-list">
+                    <div class="achievement-item">
+                        <div class="achievement-icon">🏆</div>
+                        <div>
+                            <strong>Best Innovation Award</strong><br>
+                            <small>Hackathon 2024 - Built an AI-powered accessibility tool</small>
+                        </div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-icon">⭐</div>
+                        <div>
+                            <strong>5000+ GitHub Stars</strong><br>
+                            <small>Open source contributions across multiple repositories</small>
+                        </div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-icon">📚</div>
+                        <div>
+                            <strong>AWS Certified Solutions Architect</strong><br>
+                            <small>Professional level certification achieved</small>
+                        </div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-icon">🎯</div>
+                        <div>
+                            <strong>100+ Projects Delivered</strong><br>
+                            <small>Successfully completed projects for global clients</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div id="contact" class="content-section">
+                <div class="section-title">$ echo $CONTACT_INFO</div>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <span>📧</span>
+                        <span>email@example.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>🔗</span>
+                        <span>linkedin.com/in/yourname</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>💻</span>
+                        <span>github.com/yourname</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>🐦</span>
+                        <span>@yourhandle</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>🌐</span>
+                        <span>yourwebsite.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>📱</span>
+                        <span>+1 234 567 8900</span>
+                    </div>
+                </div>
+
+                <div class="command-line" style="margin-top: 30px;">
+                    <span class="command-prompt">$</span> send_message --type="collaboration"<br>
+                    <span style="color: #00ff9f;">✓ Ready to connect and build amazing things together!</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(tabName) {
+            // Remove active class from all tabs and sections
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Add active class to clicked tab and corresponding section
+            event.target.classList.add('active');
+            document.getElementById(tabName).classList.add('active');
+
+            // Trigger animation for skill bars when skills tab is opened
+            if (tabName === 'skills') {
+                document.querySelectorAll('.skill-progress').forEach(bar => {
+                    const width = bar.style.width;
+                    bar.style.width = '0';
+                    setTimeout(() => {
+                        bar.style.width = width;
+                    }, 100);
+                });
+            }
+        }
+
+        // Terminal typing effect
+        const terminalText = ['Connected', 'Secure', 'Ready'];
+        let textIndex = 0;
+
+        setInterval(() => {
+            const typingElement = document.querySelector('.typing-effect');
+            if (typingElement) {
+                typingElement.textContent = terminalText[textIndex];
+                textIndex = (textIndex + 1) % terminalText.length;
+            }
+        }, 2000);
+
+        // Add some interactive console logging
+        console.log('%c⚡ DEV TERMINAL v2.0 INITIALIZED ⚡', 'color: #00ff41; font-size: 20px; font-weight: bold;');
+        console.log('%cWelcome to the Matrix...', 'color: #00ff41; font-size: 14px;');
+    </script>
+</body>
+</html>
