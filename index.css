@@ -1,15 +1,22 @@
 
 
 body {
-    font-family: 'Courier New', monospace;
+    font-family: 'cyborg punk',spacetron, monospace;
+    /* font-weight: 600; */
     background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
-    color: #00ff41;
+    color: #60bdc4;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
     overflow-x: hidden;
+    /* scrollbar */
+}
+
+.nav-icon {
+    width: 1em;
+    color: white;
 }
 
 .terminal-container {
@@ -20,13 +27,13 @@ body {
     box-shadow: 0 0 40px rgba(0, 255, 65, 0.3),
                 inset 0 0 20px rgba(0, 255, 65, 0.1);
     overflow: hidden;
-    border: 2px solid #00ff41;
+    border: 2px solid #60bdc4;
     animation: terminalGlow 3s ease-in-out infinite alternate;
 }
 
 @keyframes terminalGlow {
-    from { box-shadow: 0 0 40px rgba(0, 255, 65, 0.3); }
-    to { box-shadow: 0 0 60px rgba(0, 255, 65, 0.5); }
+    from { box-shadow: 0 0 40px rgba(0, 65, 255, 0.3); }
+    to { box-shadow: 0 0 60px rgba(0, 65, 255, 0.5); }
 }
 
 .terminal-header {
@@ -35,15 +42,16 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid #00ff41;
+    border-bottom: 2px solid #2f8ca3;
 }
 
 .terminal-title {
+    font-family: 'Origin Tech Demo';
     display: flex;
     align-items: center;
     gap: 15px;
     font-size: 18px;
-    text-shadow: 0 0 10px #00ff41;
+    text-shadow: 0 0 10px #216a7c;
 }
 
 .status-lights {
@@ -70,7 +78,7 @@ body {
 .tabs-container {
     background: rgba(20, 20, 20, 0.9);
     display: flex;
-    border-bottom: 1px solid #00ff41;
+    border-bottom: 1px solid #2f8ca3;
     overflow-x: auto;
 }
 
@@ -79,7 +87,7 @@ body {
     cursor: pointer;
     background: transparent;
     border: none;
-    color: #00ff41;
+    color: #2f8ca3;
     font-family: inherit;
     font-size: 14px;
     position: relative;
@@ -89,12 +97,12 @@ body {
 
 .tab:hover {
     background: rgba(0, 255, 65, 0.1);
-    text-shadow: 0 0 5px #00ff41;
+    text-shadow: 0 0 5px #2f8ca3;
 }
 
 .tab.active {
     background: rgba(0, 255, 65, 0.2);
-    text-shadow: 0 0 10px #00ff41;
+    text-shadow: 0 0 10px #2f8ca3;
 }
 
 .tab.active::after {
@@ -104,7 +112,7 @@ body {
     left: 0;
     right: 0;
     height: 2px;
-    background: #00ff41;
+    background: #2f8ca3;
     animation: scanline 2s linear infinite;
 }
 
@@ -141,14 +149,14 @@ body {
     gap: 30px;
     margin-bottom: 30px;
     padding-bottom: 20px;
-    border-bottom: 1px dashed #00ff41;
+    border-bottom: 1px dashed #60bdc4;
 }
 
 .avatar-container {
     position: relative;
     width: 150px;
     height: 150px;
-    border: 2px solid #00ff41;
+    border: 2px solid #2f8ca3;
     border-radius: 10px;
     background: linear-gradient(45deg, #0a0e27, #1a1f3a);
     display: flex;
@@ -158,15 +166,17 @@ body {
 }
 
 .passport {
-    width: 150px;
+    width: 200px;
 }
 
 .avatar-placeholder {
     font-size: 60px;
-    color: #00ff41;
-    text-shadow: 0 0 20px #00ff41;
-    animation: rotate 10s linear infinite;
+    color: #2f8ca3;
+    text-shadow: 0 0 20px #2f8ca3;
+    /* animation: rotate 10s linear infinite; */
 }
+
+
 
 @keyframes rotate {
     from { transform: rotate(0deg); }
@@ -174,10 +184,12 @@ body {
 }
 
 .passport-info h1 {
-    font-size: 32px;
+    font-family: "Cyborg Punk";
+    font-size: 28px;
     margin-bottom: 10px;
-    text-shadow: 0 0 15px #00ff41;
+    /* text-shadow: 0 0 15px #60bdc4; */
 }
+
 
 .passport-meta {
     display: flex;
@@ -190,12 +202,13 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    color: #00ff41;
+    color: #2f8ca3;
     opacity: 0.8;
 }
 
 .meta-item .label {
-    color: #00ff9f;
+    font-family:  'Airstrike','Tr2n';
+    color: #2f8ca3;
     min-width: 100px;
 }
 
@@ -203,8 +216,8 @@ body {
     font-size: 24px;
     margin-bottom: 20px;
     padding-bottom: 10px;
-    border-bottom: 1px solid #00ff41;
-    text-shadow: 0 0 10px #00ff41;
+    border-bottom: 1px solid #2f8ca3;
+    text-shadow: 0 0 10px #2f8ca3;
 }
 
 .skill-grid {
@@ -216,7 +229,7 @@ body {
 
 .skill-card {
     background: rgba(0, 255, 65, 0.05);
-    border: 1px solid #00ff41;
+    border: 1px solid #2f8ca3;
     padding: 15px;
     border-radius: 5px;
     transition: all 0.3s ease;
@@ -244,7 +257,7 @@ body {
 
 .skill-progress {
     height: 100%;
-    background: linear-gradient(90deg, #00ff41, #00ff9f);
+    background: linear-gradient(90deg, #2f8ca3, #00ff9f);
     border-radius: 4px;
     animation: loadProgress 1.5s ease forwards;
 }
@@ -255,7 +268,7 @@ body {
 
 .project-card {
     background: rgba(0, 255, 65, 0.05);
-    border: 1px solid #00ff41;
+    border: 1px solid #2f8ca3;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 5px;
@@ -290,7 +303,7 @@ body {
     padding: 5px 12px;
     border-radius: 15px;
     font-size: 12px;
-    border: 1px solid #00ff41;
+    border: 1px solid #2f8ca3;
 }
 
 .achievement-list {
@@ -305,7 +318,7 @@ body {
     gap: 15px;
     padding: 15px;
     background: rgba(0, 255, 65, 0.05);
-    border-left: 3px solid #00ff41;
+    border-left: 3px solid #2f8ca3;
     transition: all 0.3s ease;
 }
 
@@ -331,25 +344,38 @@ body {
     gap: 12px;
     padding: 15px;
     background: rgba(0, 255, 65, 0.05);
-    border: 1px solid #00ff41;
+    border: 1px solid #2f8ca3;
     border-radius: 5px;
     transition: all 0.3s ease;
     cursor: pointer;
 }
 
+.contact-item a {
+    /* display: block; */
+    text-decoration: none;
+    color: inherit;
+
+}
+
+.contact-item img {
+    background-color: #00ff9f;
+    /* width: 4rem */
+    /* outline-style: auto; */
+}
 .contact-item:hover {
     background: rgba(0, 255, 65, 0.1);
     transform: translateY(-2px);
 }
 
 .typing-effect {
+    font-family: 'Tr2n';
     display: inline-block;
-    border-right: 2px solid #00ff41;
+    border-right: 2px solid #2f8ca3;
     animation: blink 1s infinite;
 }
 
 @keyframes blink {
-    0%, 50% { border-color: #00ff41; }
+    0%, 50% { border-color: #2f8ca3; }
     51%, 100% { border-color: transparent; }
 }
 
@@ -357,9 +383,9 @@ body {
     margin-top: 20px;
     padding: 10px;
     background: rgba(0, 0, 0, 0.5);
-    border: 1px solid #00ff41;
+    border: 1px solid #2f8ca3;
     border-radius: 3px;
-    font-family: 'Courier New', monospace;
+    font-family: 'Tr2n';
 }
 
 .command-prompt {
@@ -381,3 +407,7 @@ body {
         overflow-x: auto;
     }
 }
+
+/* glitch effect */
+
+

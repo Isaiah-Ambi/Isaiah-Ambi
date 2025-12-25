@@ -3,48 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dev Terminal v2.0 - Digital Passport</title>
+    <title>Dev Terminal</title>
     <link rel="stylesheet" href="index.css">
     <style>
-        * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        /* reset */
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        /* avatar / glitch */
+        .avatar-placeholder { width: 140px; height: 140px; position: relative; overflow: hidden; border-radius: 8px; }
+        .glitch { position: relative; width: 100%; height: 100%; display: block; }
+        .glitch img { display: block; width: 100%; height: 100%; object-fit: cover; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+
+        /* layered colored copies */
+        .glitch .glitch-layer { position: absolute; inset: 0; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0.9; mix-blend-mode: screen; }
+
+        .glitch .red { filter: hue-rotate(-10deg) saturate(1.4) contrast(1.05); transform: translate(0,0); animation: glitch-red 2s infinite linear; }
+        .glitch .blue { filter: hue-rotate(170deg) saturate(1.2) contrast(1.05); transform: translate(0,0); animation: glitch-blue 2.2s infinite linear; }
+
+        @keyframes glitch-red {
+            0%   { clip-path: inset(0 0 0 0); transform: translate(0,0); opacity:0.9; }
+            10%  { clip-path: inset(10% 0 70% 0); transform: translate(-6px,-3px); }
+            20%  { clip-path: inset(60% 0 10% 0); transform: translate(4px,2px); }
+            30%  { clip-path: inset(30% 0 40% 0); transform: translate(-3px,1px); }
+            40%  { clip-path: inset(0 0 0 0); transform: translate(0,0); }
+            100% { clip-path: inset(0 0 0 0); transform: translate(0,0); }
+        }
+
+        @keyframes glitch-blue {
+            0%   { clip-path: inset(0 0 0 0); transform: translate(0,0); opacity:0.9; }
+            15%  { clip-path: inset(5% 0 60% 0); transform: translate(5px,2px); }
+            35%  { clip-path: inset(50% 0 15% 0); transform: translate(-4px,-2px); }
+            55%  { clip-path: inset(20% 0 45% 0); transform: translate(3px,1px); }
+            100% { clip-path: inset(0 0 0 0); transform: translate(0,0); }
+        }
+
+        /* subtle main image shake */
+        .glitch .base { animation: glitch-base 2s infinite linear; }
+        @keyframes glitch-base {
+            0% { transform: translate(0,0); }
+            50% { transform: translate(0.5px, -0.5px); }
+            100% { transform: translate(0,0); }
+        }
     </style>
 </head>
 <body>
     <div class="terminal-container">
         <div class="terminal-header">
             <div class="terminal-title">
-                <span>⚡</span>
                 <span>DEV_TERMINAL_v2.0</span>
                 <span class="typing-effect"></span>
             </div>
-            <div class="status-lights">
+            <!-- <div class="status-lights">
                 <div class="status-light red"></div>
                 <div class="status-light yellow"></div>
                 <div class="status-light green"></div>
-            </div>
+            </div> -->
         </div>
 
         <div class="tabs-container">
-            <button class="tab active" onclick="switchTab('overview')">📊 Overview</button>
-            <button class="tab" onclick="switchTab('skills')">⚡ Skills</button>
-            <button class="tab" onclick="switchTab('projects')">🚀 Projects</button>
-            <button class="tab" onclick="switchTab('achievements')">🏆 Achievements</button>
-            <button class="tab" onclick="switchTab('contact')">📡 Contact</button>
+            <button class="tab active" onclick="switchTab('overview')"> Overview</button>
+            <button class="tab" onclick="switchTab('skills')"> Skills</button>
+            <button class="tab" onclick="switchTab('projects')"> Projects</button>
+            <button class="tab" onclick="switchTab('achievements')"> Achievements</button>
+            <button class="tab" onclick="switchTab('contact')"> Contact</button>
         </div>
 
         <div class="terminal-content">
             <!-- Overview Section -->
+
             <div id="overview" class="content-section active">
                 <div class="passport-header">
-                    <div class="avatar-container">
-                        <div class="avatar-placeholder"><img class="passport" src="./passport.png"></div>
+                    <div class="avatar-container image__container">
+                        <div class="avatar-placeholder">
+                            <div class="avatar-placeholder">
+                                <div class="glitch">
+                                    <img class="passport base" src="./passport.png" alt="passport">
+                                    <img class="passport glitch-layer red" src="./passport.png" alt="" aria-hidden="true">
+                                    <img class="passport glitch-layer blue" src="./passport.png" alt="" aria-hidden="true">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="passport-info">
-                        <h1>[Your Name]</h1>
+                        <h1>Isaiah Ambi</h1>
                         <div class="passport-meta">
                             <div class="meta-item">
                                 <span class="label">ROLE:</span>
@@ -52,7 +93,7 @@
                             </div>
                             <div class="meta-item">
                                 <span class="label">LEVEL:</span>
-                                <span>Senior Developer</span>
+                                <span>Junior Developer</span>
                             </div>
                             <div class="meta-item">
                                 <span class="label">STATUS:</span>
@@ -66,19 +107,13 @@
                     </div>
                 </div>
 
-                <div class="section-title">$ whoami</div>
+                <div class="section-title">$ aboutme</div>
                 <p style="line-height: 1.8; margin-bottom: 20px;">
                     Passionate full-stack developer with expertise in building scalable web applications. 
                     Specializing in modern JavaScript frameworks, cloud architecture, and creating elegant 
                     solutions to complex problems. Always learning, always coding.
                 </p>
 
-                <div class="command-line">
-                    <span class="command-prompt">$</span> git status<br>
-                    <span style="color: #00ff9f;">On branch: main</span><br>
-                    <span style="color: #00ff9f;">Your branch is up to date</span><br>
-                    <span style="color: #00ff9f;">Ready to commit awesome code!</span>
-                </div>
             </div>
 
             <!-- Skills Section -->
@@ -88,42 +123,29 @@
                     <div class="skill-card">
                         <div class="skill-name">JavaScript/TypeScript</div>
                         <div class="skill-level">
-                            <div class="skill-progress" style="width: 95%"></div>
+                            <div class="skill-progress" style="width: 55%"></div>
                         </div>
-                        <small>Expert Level</small>
+                        <!-- <small>Expert Level</small> -->
                     </div>
-                    <div class="skill-card">
-                        <div class="skill-name">React/Next.js</div>
-                        <div class="skill-level">
-                            <div class="skill-progress" style="width: 90%"></div>
-                        </div>
-                        <small>Advanced</small>
-                    </div>
+                    
                     <div class="skill-card">
                         <div class="skill-name">Node.js/Express</div>
                         <div class="skill-level">
-                            <div class="skill-progress" style="width: 88%"></div>
+                            <div class="skill-progress" style="width: 60%"></div>
                         </div>
-                        <small>Advanced</small>
+                        <!-- <small>Advanced</small> -->
                     </div>
                     <div class="skill-card">
-                        <div class="skill-name">Python/Django</div>
+                        <div class="skill-name">Django</div>
                         <div class="skill-level">
-                            <div class="skill-progress" style="width: 85%"></div>
+                            <div class="skill-progress" style="width: 45%"></div>
                         </div>
-                        <small>Advanced</small>
-                    </div>
+                        <!-- <small>Advanced</small> -->
+                    </div>`
                     <div class="skill-card">
-                        <div class="skill-name">AWS/Cloud Services</div>
+                        <div class="skill-name">Python</div>
                         <div class="skill-level">
-                            <div class="skill-progress" style="width: 82%"></div>
-                        </div>
-                        <small>Proficient</small>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-name">Docker/Kubernetes</div>
-                        <div class="skill-level">
-                            <div class="skill-progress" style="width: 78%"></div>
+                            <div class="skill-progress" style="width: 52%"></div>
                         </div>
                         <small>Proficient</small>
                     </div>
@@ -143,8 +165,8 @@
                         <span class="tech-tag">React</span>
                         <span class="tech-tag">Node.js</span>
                         <span class="tech-tag">MongoDB</span>
-                        <span class="tech-tag">Redis</span>
-                        <span class="tech-tag">AWS</span>
+                        <!-- <span class="tech-tag">Redis</span> -->
+                        <!-- <span class="tech-tag">AWS</span> -->
                     </div>
                 </div>
                 <div class="project-card">
@@ -180,23 +202,9 @@
                 <div class="section-title">$ cat achievements.log</div>
                 <div class="achievement-list">
                     <div class="achievement-item">
-                        <div class="achievement-icon">🏆</div>
-                        <div>
-                            <strong>Best Innovation Award</strong><br>
-                            <small>Hackathon 2024 - Built an AI-powered accessibility tool</small>
-                        </div>
-                    </div>
-                    <div class="achievement-item">
-                        <div class="achievement-icon">⭐</div>
-                        <div>
-                            <strong>5000+ GitHub Stars</strong><br>
-                            <small>Open source contributions across multiple repositories</small>
-                        </div>
-                    </div>
-                    <div class="achievement-item">
                         <div class="achievement-icon">📚</div>
                         <div>
-                            <strong>AWS Certified Solutions Architect</strong><br>
+                            <strong>Python Basics 1</strong><br>
                             <small>Professional level certification achieved</small>
                         </div>
                     </div>
@@ -215,29 +223,30 @@
                 <div class="section-title">$ echo $CONTACT_INFO</div>
                 <div class="contact-grid">
                     <div class="contact-item">
-                        <span>📧</span>
-                        <span>email@example.com</span>
+                        <a href="mailto:ambison24@gmail.com">
+                            <span><img src="./svg/envelope.svg"></span>
+                            <span>email</span>
+                        </a>
                     </div>
                     <div class="contact-item">
-                        <span>🔗</span>
-                        <span>linkedin.com/in/yourname</span>
+                        <a href="https://www.linkedin.com">
+                            <span><img src="./svg/linkedin.svg"></span>
+                            <span>linkedin</span>
+                        </a>
                     </div>
                     <div class="contact-item">
-                        <span>💻</span>
-                        <span>github.com/yourname</span>
+                        <a href="https://www.github.com/Isaiah-Ambi">
+                            <span><img src="./svg/github.svg"></span>
+                            <span>github</span>
+                        </a>
                     </div>
                     <div class="contact-item">
-                        <span>🐦</span>
-                        <span>@yourhandle</span>
+                        <a href="https://www.x.com/iziah_ambison">
+                            <span><img src="./svg/twitter.svg"></span>
+                            <span>@Iziah_Ambison</span>
+                        </a>
                     </div>
-                    <div class="contact-item">
-                        <span>🌐</span>
-                        <span>yourwebsite.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <span>📱</span>
-                        <span>+1 234 567 8900</span>
-                    </div>
+                    
                 </div>
 
                 <div class="command-line" style="margin-top: 30px;">
